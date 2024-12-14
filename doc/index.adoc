@@ -1,0 +1,47 @@
+= ヘキサゴナルアーキテクチャ
+
+`Ports & Adapter` または `Hexagonal Architecture`
+
+- [公式記事（ Alistair Cockburn ）](https://alistair.cockburn.us/hexagonal-architecture/)
+- [日本語訳](http://blog.tai2.net/hexagonal_architexture.html)
+
+** 参考 : https://github.com/aws-samples/aws-lambda-domain-model-sample[Domain Model objects on AWS Lambda with Hexagonal Architecture Sample]
+* https://jeffreypalermo.com/tag/onion-architecture/[オニオンアーキテクチャ]
+* https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html[クリーンアーキテクチャ]
+
+https://fintan.jp/page/397/
+
+https://qiita.com/afukui/items/c705aca2cb46e182c5e4
+
+https://docs.aws.amazon.com/prescriptive-guidance/latest/hexagonal-architectures/welcome.html
+
+https://www.redhat.com/ja/topics/cloud-native-apps/what-is-an-application-architecture
+
+https://blog.itbrains.jp/software-architecture-patterns-types.html
+
+https://www.ibm.com/jp-ja/topics/three-tier-architecture
+
+
+
+
+システム設計
+アプリケーション設計
+データ設計
+
+
+
+
+3 層アーキテクチャ（ Web アプリケーションなどで一般的な構造）
+レイヤードアーキテクチャ（ドメインの概念の登場）
+
+レイヤードアーキテクチャの発展系
+ドメイン駆動設計で使われる
+
+ドメイン駆動設計以外との比較は？
+
+ヘキサゴナルアーキテクチャの説明ではドメインが登場するほど深く説明しておらず、アプリケーションとしか書いてないので、
+他の設計手法でも適用できるかも？
+
+
+テスト入力やモックも想定しているため、テスト駆動開発（ TDD ）とも相性が良い
+
