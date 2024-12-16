@@ -29,8 +29,6 @@ https://qiita.com/shibainuu/items/e975f7039cd8f058e123
 
 https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/hexagonal-architecture.html
 
-https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/hexagonal-architectures/hexagonal-architectures.pdf
-
 https://aws.amazon.com/jp/blogs/news/developing-evolutionary-architecture-with-aws-lambda/
 
 https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/welcome.html
