@@ -19,9 +19,7 @@ https://www.redhat.com/ja/topics/cloud-native-apps/what-is-an-application-archit
 
 https://blog.itbrains.jp/software-architecture-patterns-types.html
 
-https://www.ibm.com/jp-ja/topics/three-tier-architecture
 
-https://learn.microsoft.com/ja-jp/windows/win32/cossdk/using-a-three-tier-architecture-model
 
 https://learn.microsoft.com/ja-jp/azure/architecture/guide/
 
@@ -31,7 +29,6 @@ https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/h
 
 https://aws.amazon.com/jp/blogs/news/developing-evolutionary-architecture-with-aws-lambda/
 
-https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/welcome.html
 
 
 
