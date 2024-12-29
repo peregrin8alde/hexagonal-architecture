@@ -22,6 +22,10 @@ DDD における集約として実装
 
 クラス図
 
+[plantuml, target=class01, format=svg]
+....
+include::_uml/class01.puml[]
+....
 
 
 === ユーザサイドポート

@@ -1,5 +1,8 @@
 = ヘキサゴナルアーキテクチャ
 
+include::_attributes.adoc[]
+:xrefstyle: full
+
 `Ports & Adapter` または `Hexagonal Architecture`
 
 * https://alistair.cockburn.us/hexagonal-architecture/[公式記事（ Alistair Cockburn ）]
@@ -66,3 +69,12 @@ MVC などの適用例
 
 テスト入力やモックも想定しているため、テスト駆動開発（ TDD ）とも相性が良い
 
+
+:leveloffset: +1
+
+include::sec01.adoc[]
+include::sample01/_index.adoc[]
+
+:leveloffset: -1
+
+&#169; {copyright}
