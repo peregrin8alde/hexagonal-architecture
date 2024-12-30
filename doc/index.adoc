@@ -41,19 +41,6 @@ https://aws.amazon.com/jp/blogs/news/developing-evolutionary-architecture-with-a
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 MVC などの適用例
 
 
