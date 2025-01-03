@@ -30,8 +30,25 @@ include::usecases.adoc[]
 
 === ドメインレイヤー
 
+クラス図
+
+[plantuml, target=class01, format=svg]
+....
+include::_uml/class01.puml[]
+....
+
+
+
 
 ==== オブジェクト
+
+
+エンティティ
+
+レート
+id は入力値
+レート値
+
 
 値オブジェクト
 
@@ -40,15 +57,9 @@ include::usecases.adoc[]
 計算結果値
 
 
-データ型
+値
 制約
 
-
-エンティティ
-
-レート
-id は入力値
-レート値
 
 
 ==== サービス
@@ -64,6 +75,9 @@ id は入力値
 
 === ライフサイクル
 
+エンティティに対するライフサイクルパターン
+
+
 集約
 
 集約ルート
@@ -76,6 +90,10 @@ id は入力値
 
 シーケンス図
 
+[plantuml, target=sequence, format=svg]
+....
+include::_uml/sequence.puml[]
+....
 
 
 == アプリケーションレイヤー
@@ -86,15 +104,6 @@ id は入力値
 
 
 コンテキストは 1 つとする。
-
-
-クラス図
-
-[plantuml, target=class01, format=svg]
-....
-include::_uml/class01.puml[]
-....
-
 
 
 
