@@ -39,6 +39,13 @@ include::_uml/class01.puml[]
 
 
 
+シーケンス図
+
+[plantuml, target=sequence, format=svg]
+....
+include::_uml/sequence.puml[]
+....
+
 
 ==== オブジェクト
 
@@ -73,7 +80,7 @@ id は入力値
 
 
 
-=== ライフサイクル
+==== ライフサイクル
 
 エンティティに対するライフサイクルパターン
 
@@ -87,13 +94,6 @@ id は入力値
 
 リポジトリ
 レート
-
-シーケンス図
-
-[plantuml, target=sequence, format=svg]
-....
-include::_uml/sequence.puml[]
-....
 
 
 == アプリケーションレイヤー
