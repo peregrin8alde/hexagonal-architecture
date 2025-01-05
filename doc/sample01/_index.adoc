@@ -32,19 +32,20 @@ include::usecases.adoc[]
 
 クラス図
 
-[plantuml, target=class01, format=svg]
-....
-include::_uml/class01.puml[]
-....
-
+++++
+<div class="mermaid">
+include::_uml/class01.uml[]
+</div>
+++++
 
 
 シーケンス図
 
-[plantuml, target=sequence, format=svg]
-....
-include::_uml/sequence.puml[]
-....
+++++
+<div class="mermaid">
+include::_uml/sequence.uml[]
+</div>
+++++
 
 
 ==== オブジェクト

@@ -1,0 +1,13 @@
+%% サンプル
+%% 
+%% 参考 : https://mermaid.js.org/syntax/sequenceDiagram.html
+%% 
+%% sequenceDiagram
+%%     Alice->>John: Hello John, how are you?
+%%     John-->>Alice: Great!
+%%     Alice-)John: See you later!
+
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
