@@ -26,25 +26,22 @@
 %%         +run()
 %%     }
 classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
+    レート o-- 入力値
+    レート o-- レート値
+    class レート{
+        -入力値 id
+        -レート値 rate
+        +制約チェック()
     }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
+    class 入力値{
+        -int 値
+        +制約チェック()
     }
-    class Zebra{
-        +bool is_wild
-        +run()
+    class レート値{
+        -float 値
+        +制約チェック()
+    }
+    class 計算結果値{
+        -float 値
+        +制約チェック()
     }
