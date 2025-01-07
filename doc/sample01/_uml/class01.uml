@@ -1,6 +1,11 @@
-%% サンプル
-%% 
+%%%%% 
+%% クラス図
+%%%%% 
 %% 参考 : https://mermaid.js.org/syntax/classDiagram.html
+%% 
+%% Annotations については HTML の特殊文字がうまく扱えなかったため、 HTML エンティティを使用すること
+%%   例） &lt;&lt;interface&gt;&gt;
+%% サンプル
 %% 
 %% classDiagram
 %%     note "From Duck till Zebra"
@@ -26,22 +31,31 @@
 %%         +run()
 %%     }
 classDiagram
-    レート o-- 入力値
-    レート o-- レート値
-    class レート{
-        -入力値 id
-        -レート値 rate
+
+namespace 計算アプリケーション {
+
+    class レート {
+        -int 入力値（ id ）
+        -float レート値
         +制約チェック()
     }
-    class 入力値{
-        -int 値
-        +制約チェック()
+
+    class レートリポジトリインターフェース {
+        &lt;&lt;interface&gt;&gt;
+        +作成する()
+        +参照する()
+        +更新する()
+        +削除する()
     }
-    class レート値{
-        -float 値
-        +制約チェック()
+
+    class 計算サービスインターフェース {
+        &lt;&lt;interface&gt;&gt;
+        +計算する(入力値) float
     }
-    class 計算結果値{
-        -float 値
-        +制約チェック()
-    }
+
+
+}
+
+
+レートリポジトリインターフェース --> レート
+

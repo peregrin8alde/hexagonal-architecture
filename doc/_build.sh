@@ -20,10 +20,5 @@ asciidoctor \
   "${DOC_ROOT}/index.adoc"
 
 
-# plantuml を使うと謎のディレクトリが作成されるため、削除
-if [ -d ${SCRIPT_DIR}/\? ]; then
-  rm -rf ${SCRIPT_DIR}/\?/
-fi
-
 
 exit 0
