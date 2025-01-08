@@ -1,0 +1,31 @@
+%%%%% 
+%% クラス図
+%%%%% 
+%% 参考 : https://mermaid.js.org/syntax/classDiagram.html
+%% 
+%% Annotations については HTML の特殊文字がうまく扱えなかったため、 HTML エンティティを使用すること
+%%   例） &lt;&lt;interface&gt;&gt;
+%% サンプル
+%% 
+namespace アプリケーションサービス {
+
+    class 計算Aサービス {
+        &lt;&lt;service&gt;&gt;
+        レートリポジトリ
+        レート
+        +計算する(入力値) float
+    }
+
+    class 計算Bサービス {
+        &lt;&lt;service&gt;&gt;
+        レートリポジトリ
+        レート
+        +計算する(入力値) float
+    }
+
+}
+
+
+計算Aサービス --|> 計算サービスインターフェース : 実装
+計算Bサービス --|> 計算サービスインターフェース : 実装
+

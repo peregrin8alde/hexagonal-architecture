@@ -7,32 +7,7 @@
 %%   例） &lt;&lt;interface&gt;&gt;
 %% サンプル
 %% 
-%% classDiagram
-%%     note "From Duck till Zebra"
-%%     Animal <|-- Duck
-%%     note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-%%     Animal <|-- Fish
-%%     Animal <|-- Zebra
-%%     Animal : +int age
-%%     Animal : +String gender
-%%     Animal: +isMammal()
-%%     Animal: +mate()
-%%     class Duck{
-%%         +String beakColor
-%%         +swim()
-%%         +quack()
-%%     }
-%%     class Fish{
-%%         -int sizeInFeet
-%%         -canEat()
-%%     }
-%%     class Zebra{
-%%         +bool is_wild
-%%         +run()
-%%     }
-classDiagram
-
-namespace 計算アプリケーション {
+namespace ドメイン {
 
     class レート {
         -int 入力値（ id ）
@@ -42,6 +17,7 @@ namespace 計算アプリケーション {
 
     class レートリポジトリインターフェース {
         &lt;&lt;interface&gt;&gt;
+        定数
         +作成する()
         +参照する()
         +更新する()
@@ -50,6 +26,7 @@ namespace 計算アプリケーション {
 
     class 計算サービスインターフェース {
         &lt;&lt;interface&gt;&gt;
+        定数
         +計算する(入力値) float
     }
 
@@ -57,5 +34,7 @@ namespace 計算アプリケーション {
 }
 
 
-レートリポジトリインターフェース --> レート
+レートリポジトリインターフェース --> レート : 管理
+計算サービスインターフェース --> レート : 利用
+計算サービスインターフェース --> レートリポジトリインターフェース : 利用
 
