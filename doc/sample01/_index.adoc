@@ -28,7 +28,7 @@ include::usecases.adoc[]
 
 コアとなるレイヤーから設計していく。
 
-=== 全体概要
+=== 全体像
 
 ++++
 <div class="mermaid">
@@ -36,10 +36,11 @@ classDiagram
 direction LR
 include::_uml/class_domain01.uml[]
 include::_uml/class_appservice.uml[]
+include::_uml/class_primary_adapter.uml[]
+include::_uml/class_secondary_adapter.uml[]
 
 </div>
 ++++
-
 
 
 

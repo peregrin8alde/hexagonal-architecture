@@ -1,0 +1,25 @@
+%%%%% 
+%% クラス図
+%%%%% 
+%% 参考 : https://mermaid.js.org/syntax/classDiagram.html
+%% 
+%% Annotations については HTML の特殊文字がうまく扱えなかったため、 HTML エンティティを使用すること
+%%   例） &lt;&lt;interface&gt;&gt;
+%% サンプル
+%% 
+namespace プライマリアダプタ {
+
+    class テストハーネスアダプタ {
+    }
+
+    class CUIアダプタ {
+    }
+
+}
+
+
+テストハーネスアダプタ --> 計算Aサービス : 利用
+テストハーネスアダプタ --> 計算Bサービス : 利用
+
+CUIアダプタ --> 計算Aサービス : 利用
+
