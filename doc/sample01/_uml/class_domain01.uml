@@ -27,6 +27,7 @@ namespace ドメイン {
     class 計算サービスインターフェース {
         &lt;&lt;interface&gt;&gt;
         定数
+        +初期化（レートリポジトリインターフェース）
         +計算する(入力値) float
     }
 
