@@ -34,10 +34,10 @@ include::usecases.adoc[]
 <div class="mermaid">
 classDiagram
 direction LR
-include::_uml/class_domain01.uml[]
-include::_uml/class_appservice.uml[]
-include::_uml/class_primary_adapter.uml[]
-include::_uml/class_secondary_adapter.uml[]
+include::uml/class_domain01.uml[]
+include::uml/class_appservice.uml[]
+include::uml/class_primary_adapter.uml[]
+include::uml/class_secondary_adapter.uml[]
 
 </div>
 ++++
@@ -54,7 +54,7 @@ include::_uml/class_secondary_adapter.uml[]
 <div class="mermaid">
 classDiagram
 direction LR
-include::_uml/class_domain01.uml[]
+include::uml/class_domain01.uml[]
 </div>
 ++++
 
@@ -63,7 +63,7 @@ include::_uml/class_domain01.uml[]
 
 ++++
 <div class="mermaid">
-include::_uml/class02.uml[]
+include::uml/class02.uml[]
 </div>
 ++++
 
@@ -74,7 +74,7 @@ include::_uml/class02.uml[]
 
 ++++
 <div class="mermaid">
-include::_uml/sequence.uml[]
+include::uml/sequence.uml[]
 </div>
 ++++
 
