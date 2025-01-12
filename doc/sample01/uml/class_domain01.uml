@@ -11,8 +11,8 @@ namespace ドメイン {
 
     class レート {
         -int 入力値（ id ）
-        -float レート値
-        +制約チェック()
+        -double レート値
+        +生成()
     }
 
     class レートリポジトリインターフェース {
@@ -28,9 +28,14 @@ namespace ドメイン {
         &lt;&lt;interface&gt;&gt;
         定数
         +初期化（レートリポジトリインターフェース）
-        +計算する(入力値) float
+        +計算する(入力値) double
     }
 
+    class 計算結果値{
+        -double 値
+        -double レート値
+        +制約チェック()
+    }
 
 }
 
