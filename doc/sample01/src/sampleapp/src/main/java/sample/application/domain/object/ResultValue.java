@@ -8,4 +8,8 @@ public class ResultValue {
         this.value = value;
         this.rate = rate;
     }
+
+    public double getValue() {
+        return this.value;
+    }
 }
