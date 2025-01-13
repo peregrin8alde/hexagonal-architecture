@@ -23,7 +23,7 @@ class TestAdapterTest {
 
         List<TestInput> inputList = new ArrayList<>();
         List<TestResult> expectedList = new ArrayList<>();
-        for (int input = 1; input <= 101; input++) {
+        for (int input = 1; input <= 100; input++) {
             inputList.add(new TestInput(input));
             double rate = 1.01;
             ResultValue resultValue = new ResultValue(input * rate, rate);

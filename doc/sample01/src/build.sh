@@ -9,7 +9,7 @@ docker run \
   -w /prj/${ARTIFACTID} \
   -e MAVEN_CONFIG=/prj/maven/.m2 \
   maven:3.9 \
-    mvn package \
+    mvn clean dependency:copy-dependencies package \
       -Duser.home=/prj/maven
 
 
