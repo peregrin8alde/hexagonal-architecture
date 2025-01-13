@@ -10,6 +10,10 @@ public class ResultValue {
     }
 
     public double getData() {
-        return this.data;
+        return data;
+    }
+
+    public double getRate() {
+        return rate;
     }
 }

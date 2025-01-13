@@ -10,7 +10,7 @@ public class RateEntity {
     }
 
     public double getRate() {
-        return this.rate;
+        return rate;
     }
 
 }
