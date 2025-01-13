@@ -33,6 +33,8 @@ https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/h
 https://aws.amazon.com/jp/blogs/news/developing-evolutionary-architecture-with-aws-lambda/
 
 
+https://8thlight.com/insights/a-color-coded-guide-to-ports-and-adapters
+
 
 
 システム設計

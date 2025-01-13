@@ -1,15 +1,15 @@
 package sample.application.domain;
 
 public class ResultValue {
-    private double value;
+    private double data;
     private double rate;
 
-    public ResultValue(double value, double rate) {
-        this.value = value;
+    public ResultValue(double data, double rate) {
+        this.data = data;
         this.rate = rate;
     }
 
-    public double getValue() {
-        return this.value;
+    public double getData() {
+        return this.data;
     }
 }
