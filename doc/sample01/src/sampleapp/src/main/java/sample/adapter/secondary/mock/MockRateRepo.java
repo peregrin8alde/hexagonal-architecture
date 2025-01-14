@@ -2,9 +2,9 @@ package sample.adapter.mock;
 
 import sample.application.domain.*;
 
-public class MockDB implements IRateRepository {
+public class MockRateRepo implements IRateRepository {
 
-    public MockDB() {
+    public MockRateRepo() {
 
     }
 

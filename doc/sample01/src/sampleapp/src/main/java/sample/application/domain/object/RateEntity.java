@@ -9,6 +9,10 @@ public class RateEntity {
         this.rate = rate;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public double getRate() {
         return rate;
     }

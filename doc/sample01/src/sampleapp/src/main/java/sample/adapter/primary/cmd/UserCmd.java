@@ -32,9 +32,9 @@ public class UserCmd {
             IService app;
             if (cmd.hasOption("r")) {
                 String repositoryType = cmd.getOptionValue("r");
-                repository = new MockDB();
+                repository = new MockRateRepo();
             } else {
-                repository = new MockDB();
+                repository = new MockRateRepo();
             }
 
             if (cmd.hasOption("u")) {
