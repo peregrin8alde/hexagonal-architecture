@@ -48,7 +48,6 @@ include::uml/class_secondary_adapter.uml[]
 
 クラス図
 
-入力値などについてはここでは制約がゆるく値オブジェクトとしてモデリングは行わず、データ型（言語に用意されているプリミティブ型や列挙型など）で十分として集約ではなく属性とする。
 
 ++++
 <div class="mermaid">
@@ -82,22 +81,69 @@ include::uml/sequence.uml[]
 ==== オブジェクト
 
 
-エンティティ
+===== エンティティ
 
 レート
 id は入力値
 レート値
 
+制約がゆるく値オブジェクトとしてモデリングは行わず、データ型（言語に用意されているプリミティブ型や列挙型など）で十分な属性の
+例として、ここではレート値については値オブジェクトにしない。
+＝＞ドメインモデルの説明で UML の例を挙げれば十分なのでここでは全て値オブジェクトにする？
 
-値オブジェクト
 
-入力値
-レート値
+.エンティティ一覧
+[cols="1,1,1"options="header,autowidth",stripes=hover]
+|===
+| 名前 |プライマリアクター
+
+|===
+
+
+.レート詳細
+[cols="1,1,1,1,2"options="header,autowidth",stripes=hover]
+|===
+| 名前 | 種別 | 可視性 | 詳細 | 説明
+
+|id
+|属性
+|private
+|id : 計算入力値
+a|レート値を決定する ID 。ここでは計算の入力値を利用する。
+
+|data
+|属性
+|private
+|rate : double
+a|レート値
+
+|生成
+|操作
+|public
+|生成(id : 計算入力値, rate : double) : レート
+a|本エンティティの生成操作
+|===
+
+
+.サンプルソース（ Java ）：レート
+[source,java]
+----
+include::src/sampleapp/src/main/java/sample/application/domain/object/entity/RateEntity.java[]
+----
+
+
+===== 値オブジェクト
+
+
+計算入力値
+
+
 計算結果値
 
 
+
 値
-制約
+制約チェック
 
 
 
