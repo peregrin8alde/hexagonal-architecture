@@ -137,6 +137,7 @@ include::src/sampleapp/src/main/java/sample/application/domain/object/entity/Rat
 
 ===== 値オブジェクト
 
+できれば抽象クラスとして値オブジェクトクラスを作って継承させたいが、ややこしいため今回は保留
 
 計算入力値
 
