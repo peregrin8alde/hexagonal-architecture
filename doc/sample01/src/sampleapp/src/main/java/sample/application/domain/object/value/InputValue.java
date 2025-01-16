@@ -7,7 +7,7 @@ public class InputValue {
         this.data = data;
     }
 
-    public int getData() {
+    public int getValue() {
         return data;
     }
 

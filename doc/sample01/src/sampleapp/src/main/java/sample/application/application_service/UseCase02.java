@@ -10,11 +10,11 @@ public class UseCase02 implements IService {
         this.rateRepository = rateRepository;
     }
 
-    public ResultValue calculation(int input) {
+    public CalculationResult calculation(int input) {
         RateEntity rate = rateRepository.read(input);
         double rateValue = rate.getRate();
         
-        ResultValue resultValue = new ResultValue(input * rateValue * 2, rateValue);
+        CalculationResult resultValue = new CalculationResult(input * rateValue * 2, rateValue);
         
         return resultValue;
     }

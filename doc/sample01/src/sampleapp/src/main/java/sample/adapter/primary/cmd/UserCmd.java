@@ -46,8 +46,8 @@ public class UserCmd {
 
             int input = Integer.parseInt(cmd.getOptionValue("i"));
             
-            ResultValue resultValue = app.calculation(input);
-            System.out.println("result : " + resultValue.getData());
+            CalculationResult resultValue = app.calculation(input);
+            System.out.println("result : " + resultValue.getValue());
         }
         catch (ParseException exp) {
             System.err.println("Parsing failed.  Reason: " + exp.getMessage());

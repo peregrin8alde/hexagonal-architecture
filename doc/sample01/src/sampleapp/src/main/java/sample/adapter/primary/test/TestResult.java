@@ -8,10 +8,10 @@ import java.util.Objects;
 public class TestResult {
 
     private int status;
-    private ResultValue resultValue;
+    private CalculationResult resultValue;
     private String msg;
 
-    public TestResult(int status, ResultValue resultValue, String msg) {
+    public TestResult(int status, CalculationResult resultValue, String msg) {
         this.status = status;
         this.resultValue = resultValue;
         this.msg = msg;
@@ -22,7 +22,7 @@ public class TestResult {
         return status;
     }
 
-    public ResultValue getResultValue() {
+    public CalculationResult getCalculationResult() {
         return resultValue;
     }
 
@@ -41,8 +41,8 @@ public class TestResult {
         // 各フィールドの比較
         TestResult testResult = (TestResult) obj;
         return status == testResult.getStatus()
-            && resultValue.getData() == testResult.getResultValue().getData()
-            && resultValue.getRate() == testResult.getResultValue().getRate()
+            && resultValue.getValue() == testResult.getCalculationResult().getValue()
+            && resultValue.getRate() == testResult.getCalculationResult().getRate()
             && Objects.equals(msg, testResult.getMsg());
     }
     // equals をオーバーライドする場合は hashCode もオーバーライドする必要がある
@@ -55,7 +55,7 @@ public class TestResult {
     public String toString() {
 	    return getClass().getName() + "[ "
           + "status=" + status
-          + ", resultValue.data=" + resultValue.getData()
+          + ", resultValue.data=" + resultValue.getValue()
           + ", resultValue.rate=" + resultValue.getRate()
           + ", msg=" + msg
           + " ]";

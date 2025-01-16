@@ -7,7 +7,7 @@ public class RateValue {
         this.data = data;
     }
 
-    public double getData() {
+    public double getValue() {
         return data;
     }
 

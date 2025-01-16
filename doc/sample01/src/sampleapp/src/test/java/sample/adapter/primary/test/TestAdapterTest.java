@@ -27,13 +27,13 @@ class TestAdapterTest {
         for (int input = 0; input <= 100; input++) {
             inputList.add(new TestInput(input));
             double rate = 1.01;
-            ResultValue resultValue = new ResultValue(input * rate, rate);
+            CalculationResult resultValue = new CalculationResult(input * rate, rate);
             expectedList.add(new TestResult(0, resultValue, ""));
         }
         for (int input = 101; input <= 200; input++) {
             inputList.add(new TestInput(input));
             double rate = 1.5;
-            ResultValue resultValue = new ResultValue(input * rate, rate);
+            CalculationResult resultValue = new CalculationResult(input * rate, rate);
             expectedList.add(new TestResult(0, resultValue, ""));
         }
         
@@ -53,13 +53,13 @@ class TestAdapterTest {
         for (int input = 0; input < 100; input++) {
             inputList.add(new TestInput(input));
             double rate = 1.0;
-            ResultValue resultValue = new ResultValue(input * rate, rate);
+            CalculationResult resultValue = new CalculationResult(input * rate, rate);
             expectedList.add(new TestResult(0, resultValue, ""));
         }
         for (int input = 100; input <= 200; input++) {
             inputList.add(new TestInput(input));
             double rate = 2.0;
-            ResultValue resultValue = new ResultValue(input * rate, rate);
+            CalculationResult resultValue = new CalculationResult(input * rate, rate);
             expectedList.add(new TestResult(0, resultValue, ""));
         }
         

@@ -17,7 +17,7 @@ public class TestAdapter {
     public List<TestResult> run(List<TestInput> inputList) {
         List<TestResult> resultList = new ArrayList<>();
         inputList.forEach(input -> {
-            ResultValue resultValue = app.calculation(input.getInput());
+            CalculationResult resultValue = app.calculation(input.getInput());
 
             TestResult result = new TestResult(0, resultValue, "");
             resultList.add(result);
