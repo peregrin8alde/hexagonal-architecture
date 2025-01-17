@@ -4,9 +4,9 @@ import sample.application.domain.*;
 
 public class UseCase02 implements IService {
 
-    IRateRepository rateRepository;
+    RateRepositoryInterface rateRepository;
 
-    public UseCase02(IRateRepository rateRepository) {
+    public UseCase02(RateRepositoryInterface rateRepository) {
         this.rateRepository = rateRepository;
     }
 

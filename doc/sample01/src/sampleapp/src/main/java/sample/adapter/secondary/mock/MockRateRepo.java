@@ -2,7 +2,7 @@ package sample.adapter.mock;
 
 import sample.application.domain.*;
 
-public class MockRateRepo implements IRateRepository {
+public class MockRateRepo implements RateRepositoryInterface {
 
     public MockRateRepo() {
 

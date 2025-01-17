@@ -28,7 +28,7 @@ public class UserCmd {
         try {
             CommandLine cmd = parser.parse(options, args);
 
-            IRateRepository repository;
+            RateRepositoryInterface repository;
             IService app;
             if (cmd.hasOption("r")) {
                 String repositoryType = cmd.getOptionValue("r");

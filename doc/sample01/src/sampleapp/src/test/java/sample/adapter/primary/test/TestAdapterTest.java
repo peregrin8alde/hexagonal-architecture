@@ -18,7 +18,7 @@ class TestAdapterTest {
 
     @Test
     void test01() {
-        IRateRepository repository = new MockRateRepo();
+        RateRepositoryInterface repository = new MockRateRepo();
         IService app = new UseCase01(repository);
         testAdapter = new TestAdapter(app);
 
@@ -44,7 +44,7 @@ class TestAdapterTest {
 
     @Test
     void test02() {
-        IRateRepository repository = new FileRateRepo("src/test/java/sample/adapter/primary/test/file-rate.csv");
+        RateRepositoryInterface repository = new FileRateRepo("src/test/java/sample/adapter/primary/test/file-rate.csv");
         IService app = new UseCase01(repository);
         testAdapter = new TestAdapter(app);
 

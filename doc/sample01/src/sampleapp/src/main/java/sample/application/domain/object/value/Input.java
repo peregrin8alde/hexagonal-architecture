@@ -1,14 +1,14 @@
 package sample.application.domain;
 
-public class InputValue {
-    private final int data;
+public class Input {
+    private final int value;
 
-    public InputValue(int data) {
-        this.data = data;
+    public Input(int value) {
+        this.value = value;
     }
 
     public int getValue() {
-        return data;
+        return value;
     }
 
     private void validation() {

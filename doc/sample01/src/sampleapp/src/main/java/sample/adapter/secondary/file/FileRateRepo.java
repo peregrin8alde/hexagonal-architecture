@@ -7,7 +7,7 @@ import java.io.Reader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileRateRepo implements IRateRepository {
+public class FileRateRepo implements RateRepositoryInterface {
 
     private RateEntity[] rateEntityArray;
 
