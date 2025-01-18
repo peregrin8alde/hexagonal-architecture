@@ -34,7 +34,7 @@ include::usecases.adoc[]
 <div class="mermaid">
 classDiagram
 direction LR
-include::uml/class_domain01.uml[]
+include::uml/domain/class.uml[]
 include::uml/class_appservice.uml[]
 include::uml/class_primary_adapter.uml[]
 include::uml/class_secondary_adapter.uml[]
@@ -57,20 +57,9 @@ include::uml/class_secondary_adapter.uml[]
 <div class="mermaid">
 classDiagram
 direction LR
-include::uml/class_domain01.uml[]
+include::uml/domain/class.uml[]
 </div>
 ++++
-
-入力値などもモデリングが必要で値オブジェクトとする場合は以下のような集約やコンポジションとなる。
-（より複雑なパターンとして他のサンプルで例を示す予定）
-
-++++
-<div class="mermaid">
-include::uml/class02.uml[]
-</div>
-++++
-
-
 
 
 シーケンス図
@@ -84,8 +73,7 @@ include::uml/sequence.uml[]
 
 ==== オブジェクト
 
-制約がゆるく値オブジェクトとしてモデリングは行わず、データ型（言語に用意されているプリミティブ型や列挙型など）で十分な属性の
-例として、ここではレート値については値オブジェクトにしない。
+
 
 ===== エンティティ
 
@@ -96,8 +84,7 @@ include::uml/sequence.uml[]
 | 名前 |説明
 
 |計算レート
-a|計算に利用するレート。計算の入力値で一意に決まる。
-
+a|計算に利用するレート
 |===
 
 
@@ -109,8 +96,10 @@ a|計算に利用するレート。計算の入力値で一意に決まる。
 |id
 |属性
 |private
-|id : 計算入力値
-a|レートを決定する ID 。ここでは計算の入力値を利用する。
+|id : id
+a|レートを決定する ID 。計算の入力値で一意に決まるが、レートの ID と計算入力値は分けて考えれるようにしたい
+（実装によって id の許容値を変えるなど）ため、ここでは計算入力値と関連付けはしない。
+
 
 |rate
 |属性
@@ -230,6 +219,22 @@ a|本値オブジェクトのインスタンスを生成する
 |public
 |制約チェック() : void
 a|本値オブジェクトの値が正しいかチェックする。正しくない場合は例外を発生する。
+|===
+
+
+===== ドメイン例外
+
+すべてのクラスで発生するはず（オブジェクトも生成操作は必須）なので UML クラス図上は関連の線は省略
+生成時の制約チェックやサービスでの複数オブジェクト操作など、操作の種別で例外を分けるのであれば
+それらに対して関連の線を書くのはあり（例外の名前だけ見ればどのクラスで発生するか想像できる方が理想かも？）
+
+.例外一覧
+[cols="1,1,1"options="header,autowidth",stripes=hover]
+|===
+| 名前 |説明
+
+|ドメイン例外
+a|ドメイン上の操作で発生する例外全般。その他のドメイン例外のベースとなるもの。例外内容に応じて他の例外を追加
 |===
 
 
