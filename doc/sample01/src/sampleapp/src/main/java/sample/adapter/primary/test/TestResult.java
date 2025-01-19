@@ -1,7 +1,6 @@
-package sample.adapter.test;
+package sample.adapter.primary.test;
 
-import sample.application.domain.*;
-import sample.application.*;
+import sample.application.domain.object.value.CalculationResult;
 
 import java.util.Objects;
 
@@ -41,7 +40,7 @@ public class TestResult {
         // 各フィールドの比較
         TestResult testResult = (TestResult) obj;
         return status == testResult.getStatus()
-            && resultValue.getValue() == testResult.getCalculationResult().getValue()
+            && resultValue.getRate() == testResult.getCalculationResult().getRate()
             && resultValue.getRate() == testResult.getCalculationResult().getRate()
             && Objects.equals(msg, testResult.getMsg());
     }
@@ -55,7 +54,7 @@ public class TestResult {
     public String toString() {
 	    return getClass().getName() + "[ "
           + "status=" + status
-          + ", resultValue.data=" + resultValue.getValue()
+          + ", resultValue.data=" + resultValue.getRate()
           + ", resultValue.rate=" + resultValue.getRate()
           + ", msg=" + msg
           + " ]";

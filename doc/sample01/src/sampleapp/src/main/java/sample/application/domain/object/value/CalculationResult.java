@@ -1,4 +1,8 @@
-package sample.application.domain;
+package sample.application.domain.object.value;
+
+import java.util.Objects;
+
+import sample.application.domain.exception.DomainException;
 
 public class CalculationResult {
     // 値は不変
@@ -6,10 +10,10 @@ public class CalculationResult {
     private final double rate;
 
     // 生成時にバリデーションと値の決定
-    public CalculationResult(double result, double rate) {
-        this.validate();
+    public CalculationResult(double result, double rate) throws DomainException {
         this.result = result;
         this.rate = rate;
+        validate();
     }
 
     // 値の参照
@@ -30,8 +34,8 @@ public class CalculationResult {
         if (obj == null || getClass() != obj.getClass()) return false;
         // 各フィールドの比較
         CalculationResult calculationResult = (CalculationResult) obj;
-        return result == calculationResult.getStatus()
-            && rate == calculationResult.getCalculationResult();
+        return result == calculationResult.getResult()
+            && rate == calculationResult.getRate();
     }
     // equals をオーバーライドする場合は hashCode もオーバーライドする必要がある
     @Override
@@ -39,9 +43,9 @@ public class CalculationResult {
         return Objects.hash(result, rate);
     }
 
-    // 不当な理由に応じた例外を発生させる
-    private void validate() {
-
+    public void validate() throws DomainException {
+        // 不当な理由に応じた例外を発生させる
+        
     }
 
 }

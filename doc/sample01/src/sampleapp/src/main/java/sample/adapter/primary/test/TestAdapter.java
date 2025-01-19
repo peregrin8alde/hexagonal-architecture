@@ -1,7 +1,7 @@
-package sample.adapter.test;
+package sample.adapter.primary.test;
 
-import sample.application.domain.*;
-import sample.application.*;
+import sample.application.domain.object.value.CalculationResult;
+import sample.application.domain.port.primary.IService;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -14,10 +14,10 @@ public class TestAdapter {
         this.app = app;
     }
 
-    public List<TestResult> run(List<TestInput> inputList) {
+    public List<TestResult> run(List<TestCalculationInput> inputList) {
         List<TestResult> resultList = new ArrayList<>();
         inputList.forEach(input -> {
-            CalculationResult resultValue = app.calculation(input.getInput());
+            CalculationResult resultValue = app.calculation(input.getCalculationInput());
 
             TestResult result = new TestResult(0, resultValue, "");
             resultList.add(result);

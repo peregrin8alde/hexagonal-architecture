@@ -1,6 +1,8 @@
-package sample.adapter.file;
+package sample.adapter.secondary.file;
 
-import sample.application.domain.*;
+import sample.application.domain.exception.DomainException;
+import sample.application.domain.object.entity.RateEntity;
+import sample.application.domain.port.secondary.RateRepositoryInterface;
 
 import org.apache.commons.csv.*;
 import java.io.Reader;
@@ -28,7 +30,9 @@ public class FileRateRepo implements RateRepositoryInterface {
                 idx++;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FileRateException(e);
+        } catch (DomainException e) {
+            throw new FileRateException(e);
         }
     }
 

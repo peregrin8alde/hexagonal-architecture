@@ -1,0 +1,46 @@
+// https://code.visualstudio.com/docs/devcontainers/containers
+// https://containers.dev/implementors/json_reference/
+{
+    // https://containers.dev/implementors/json_reference/#general-properties
+    "name": "Maven-dev",
+    // コンテナ全体で固定の環境変数
+    "containerEnv": {
+        // -Duser.home の指定代わりに Dockerfile で作成したユーザのホームを直接利用
+        "MAVEN_CONFIG": "/home/devuser/.m2"
+    },
+    // UID 問題はややこしいので、自力で Dockerfile 内で調整して、その id を使う
+    "updateRemoteUserUID": false,
+    // ユーザのホームに直接マウント
+    "mounts": [
+        {
+            "source": "${localWorkspaceFolder}/maven/.m2",
+            "target": "/home/devuser/.m2",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    },
+    // https://containers.dev/implementors/json_reference/#image-specific
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+        "args": {
+            "GID": "1000",
+            "UID": "1000",
+            "USERNAME": "devuser"
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder}/sampleapp,target=/sampleapp,type=bind,consistency=cached",
+    "workspaceFolder": "/sampleapp",
+    "runArgs": [
+        "--rm"
+    ],
+    // https://containers.dev/implementors/json_reference/#tool-specific
+    "postCreateCommand": "mvn --version"
+}
