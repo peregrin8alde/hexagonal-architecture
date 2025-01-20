@@ -10,43 +10,44 @@
 namespace ドメイン {
 
     class シンプル値オブジェクト {
-        -value T
+        -value : T
         +生成(value)
         +制約チェック()
     }
 
     class 計算レート {
-        -id int
-        -double レート値
+        -id : int
+        -レート値 : double
         +生成(id, レート値)
         +制約チェック()
     }
 
     class 計算入力値{
+        -value : Integer
     }
 
     class 計算結果値{
-        -double 値
-        -double レート値
+        -値 : double
+        -レート値 : double
         +生成(値, レート値)
         +制約チェック()
     }
 
     class ドメイン例外{
-        -String message
-        -Throwable cause
+        -message : String
+        -cause : Throwable
         +生成()
     }
 
     class 計算サービスインターフェース {
         &lt;&lt;interface&gt;&gt;
         +生成（レートリポジトリインターフェース）
-        +計算する(計算入力値) 計算結果値
+        +計算する(Integer input) 計算結果値
     }
 
     class レートリポジトリインターフェース {
         &lt;&lt;interface&gt;&gt;
-        +参照する()
+        +レート取得()
     }
 
 }
@@ -54,10 +55,11 @@ namespace ドメイン {
 計算入力値 --|> シンプル値オブジェクト
 
 レートリポジトリインターフェース --> 計算レート : 管理
+
 計算サービスインターフェース --> 計算レート : 利用
 計算サービスインターフェース --> 計算入力値 : 生成／利用
 計算サービスインターフェース --> レートリポジトリインターフェース : 利用
-計算サービスインターフェース --> 計算結果値 : 生成
+計算サービスインターフェース --> 計算結果値 : 生成／返却
 
 ドメイン例外 --|> Exception
 

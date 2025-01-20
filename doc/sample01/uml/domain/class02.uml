@@ -1,0 +1,74 @@
+%%%%% 
+%% クラス図
+%%%%% 
+%% 参考 : https://mermaid.js.org/syntax/classDiagram.html
+%% 
+%% Annotations については HTML の特殊文字がうまく扱えなかったため、 HTML エンティティを使用すること
+%%   例） &lt;&lt;interface&gt;&gt;
+%% サンプル
+%% 
+namespace ドメイン {
+
+    class シンプル値オブジェクト {
+        -value : T
+        +生成(value)
+        +制約チェック()
+    }
+
+    class 計算レート {
+        -id : int
+        -レート値 : double
+        +生成(id, レート値)
+        +制約チェック()
+    }
+
+    class 計算入力値{
+        -value : Integer
+    }
+
+    class 計算結果値{
+        -値 : double
+        -レート値 : double
+        +生成(値, レート値)
+        +制約チェック()
+    }
+
+    class ドメイン例外{
+        -message : String
+        -cause : Throwable
+        +生成()
+    }
+
+    class 計算サービスインターフェース {
+        &lt;&lt;interface&gt;&gt;
+        +生成（レートリポジトリインターフェース）
+        +計算する(Integer input) 計算結果
+    }
+
+    class 計算結果 {
+        &lt;&lt;abstract&gt;&gt;
+        -status : int
+        -message : String
+        +生成（値, レート値）
+        +生成（status, message）
+    }
+
+    class レートリポジトリインターフェース {
+        &lt;&lt;interface&gt;&gt;
+        +レート取得()
+    }
+
+}
+
+計算入力値 --|> シンプル値オブジェクト
+
+レートリポジトリインターフェース --> 計算レート : 管理
+
+計算サービスインターフェース --> 計算レート : 利用
+計算サービスインターフェース --> 計算入力値 : 生成／利用
+計算サービスインターフェース --> レートリポジトリインターフェース : 利用
+計算サービスインターフェース --> 計算結果 : 生成／返却
+計算結果 "1" o-- "result 1" 計算結果値
+
+ドメイン例外 --|> Exception
+

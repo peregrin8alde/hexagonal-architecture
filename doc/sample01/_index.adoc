@@ -34,7 +34,7 @@ include::usecases.adoc[]
 <div class="mermaid">
 classDiagram
 direction LR
-include::uml/domain/class.uml[]
+include::uml/domain/class01.uml[]
 include::uml/class_appservice.uml[]
 include::uml/class_primary_adapter.uml[]
 include::uml/class_secondary_adapter.uml[]
@@ -52,12 +52,23 @@ include::uml/class_secondary_adapter.uml[]
 
 クラス図
 
+例外パターン
 
 ++++
 <div class="mermaid">
 classDiagram
 direction LR
-include::uml/domain/class.uml[]
+include::uml/domain/class01.uml[]
+</div>
+++++
+
+復帰値パターン
+
+++++
+<div class="mermaid">
+classDiagram
+direction LR
+include::uml/domain/class02.uml[]
 </div>
 ++++
 
@@ -156,12 +167,12 @@ include::src/sampleapp/src/main/java/sample/application/domain/object/entity/Rat
 ドメイン層は生成時に生成物か例外を返却して、アプリケーション層などの実装で処理を分ける。
 
 ☆ドメインとしては制約違反は実現したい概念が成り立たない致命的な異常として検査例外として、アプリケーション層でそれをどう扱うか次第で
-非検査例外で包む
+非検査例外（インターフェース側で throws 定義していなくても実装側で throw 可能）で包む
 
 参考 : https://qiita.com/ts7i/items/d7f6c1cd5a14e55943d4
 
 非検査例外だと失敗を見逃しやすいというリスクを優先するのであれば、ポートとなるインターフェースに対しては
-～結果や～失敗理由といったインターフェース用クラスを復帰値用に用意し、ポートの実装側でそれらの実装も行うのが良いか？
+～結果や～失敗理由といった抽象クラスを復帰値用に用意し、ポートの実装側でそれらの実装も行うのが良いか？
 その方がポート利用者に正常時だけではなく処理失敗時の扱いも指定できる。
 ここでは非正規例外／復帰値両パターンを用意してみる。
 
