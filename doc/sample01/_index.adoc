@@ -77,7 +77,7 @@ include::uml/domain/class02.uml[]
 
 ++++
 <div class="mermaid">
-include::uml/sequence.uml[]
+include::uml/domain/sequence.uml[]
 </div>
 ++++
 

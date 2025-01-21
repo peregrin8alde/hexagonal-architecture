@@ -47,10 +47,10 @@ namespace ドメイン {
 
     class 計算結果 {
         &lt;&lt;abstract&gt;&gt;
-        -status : int
-        -message : String
+        -erroCode : int
+        -errorMessage : String
         +生成（値, レート値）
-        +生成（status, message）
+        +生成（ erroCode, errorMessage ）
     }
 
     class レートリポジトリインターフェース {
