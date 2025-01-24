@@ -42,6 +42,16 @@ include::uml/class_secondary_adapter.uml[]
 </div>
 ++++
 
+シーケンス図
+
+++++
+<div class="mermaid">
+include::uml/domain/sequence.uml[]
+</div>
+++++
+
+シーケンス図は処理の流れや相互作用の意味合いが強いのでドメイン層の中ではなく
+アプリケーション層でドメイン層をどう使うかの話になりそう
 
 
 === ドメインレイヤー
@@ -73,13 +83,6 @@ include::uml/domain/class02.uml[]
 ++++
 
 
-シーケンス図
-
-++++
-<div class="mermaid">
-include::uml/domain/sequence.uml[]
-</div>
-++++
 
 
 ==== オブジェクト
@@ -87,6 +90,11 @@ include::uml/domain/sequence.uml[]
 
 
 ===== エンティティ
+
+
+アプリケーションの発注単位となる「計算」もエンティティにするか？
+レート集約／リポジトリとの関係は？計算リポジトリまで登場するとやりすぎ？
+その場合は計算ログまでやるほうが自然
 
 
 .エンティティ一覧
