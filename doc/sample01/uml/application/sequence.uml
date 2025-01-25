@@ -7,8 +7,6 @@
 %%     John-->>Alice: Great!
 %%     Alice-)John: See you later!
 
-sequenceDiagram
-
 プライマリアクター ->> プライマリアダプタ: 利用する
 プライマリアダプタ ->> 計算サービス: 計算する
 

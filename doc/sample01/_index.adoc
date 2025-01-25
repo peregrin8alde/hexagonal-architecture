@@ -35,7 +35,7 @@ include::usecases.adoc[]
 classDiagram
 direction LR
 include::uml/domain/class01.uml[]
-include::uml/class_appservice.uml[]
+include::uml/application/class.uml[]
 include::uml/class_primary_adapter.uml[]
 include::uml/class_secondary_adapter.uml[]
 
@@ -46,12 +46,15 @@ include::uml/class_secondary_adapter.uml[]
 
 ++++
 <div class="mermaid">
-include::uml/domain/sequence.uml[]
+sequenceDiagram
+include::uml/application/sequence.uml[]
 </div>
 ++++
 
 シーケンス図は処理の流れや相互作用の意味合いが強いのでドメイン層の中ではなく
 アプリケーション層でドメイン層をどう使うかの話になりそう
+
+ユースケースによって内容が変わるが、アクターやアダプタでは変わらないはず
 
 
 === ドメインレイヤー
