@@ -47,7 +47,7 @@ namespace ドメイン {
 
     class レートリポジトリインターフェース {
         &lt;&lt;interface&gt;&gt;
-        +レート取得()
+        +レート取得() 計算レート
     }
 
 }

@@ -2,6 +2,7 @@
 %% 
 %% 参考 : https://mermaid.js.org/syntax/sequenceDiagram.html
 %% 
+%% activate / deactivate で表す活性区間はオブジェクトの生存区間というより処理中を表す？
 %% sequenceDiagram
 %%     Alice->>John: Hello John, how are you?
 %%     John-->>Alice: Great!
@@ -10,16 +11,18 @@ actor サービス利用者
 participant サービス UI
 participant 計算サービス
 participant レートリポジトリ
+participant レートストレージ
+participant 計算入力値
 participant 計算レート
-participant レート DB
+participant 計算結果値
 
 サービス利用者 ->> サービス UI: 実行する
 サービス UI ->> 計算サービス: 計算する
 
 計算サービス ->> レートリポジトリ: 計算レート取得
 
-レートリポジトリ ->> レート DB: レートデータ取得
-レート DB -->> レートリポジトリ: レートデータ
+レートリポジトリ ->> レートストレージ: レートデータ取得
+レートストレージ -->> レートリポジトリ: レートデータ
 レートリポジトリ ->> 計算レート: 生成
 activate 計算レート
 
