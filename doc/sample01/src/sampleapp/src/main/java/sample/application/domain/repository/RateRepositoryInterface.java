@@ -1,4 +1,4 @@
-package sample.application.domain.port.secondary;
+package sample.application.domain.repository;
 
 import sample.application.domain.object.entity.RateEntity;
 

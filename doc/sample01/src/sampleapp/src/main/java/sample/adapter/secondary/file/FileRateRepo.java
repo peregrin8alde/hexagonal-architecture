@@ -2,7 +2,7 @@ package sample.adapter.secondary.file;
 
 import sample.application.domain.exception.DomainException;
 import sample.application.domain.object.entity.RateEntity;
-import sample.application.domain.port.secondary.RateRepositoryInterface;
+import sample.application.domain.repository.RateRepositoryInterface;
 
 import org.apache.commons.csv.*;
 import java.io.Reader;

@@ -3,11 +3,11 @@ package sample.application.service;
 import sample.application.domain.exception.*;
 import sample.application.domain.object.entity.RateEntity;
 import sample.application.domain.object.value.*;
-import sample.application.domain.port.primary.IService;
-import sample.application.domain.port.secondary.*;
+import sample.application.domain.repository.RateRepositoryInterface;
+import sample.application.domain.service.CalculationService;
 import sample.application.exeption.ApplicationException;
 
-public class UseCase01 implements IService {
+public class UseCase01 implements ApplicationServiceInterface {
 
     RateRepositoryInterface rateRepository;
 
@@ -15,17 +15,18 @@ public class UseCase01 implements IService {
         this.rateRepository = rateRepository;
     }
 
-    public CalculationResult calculation(int input) {
-        RateEntity rate = rateRepository.read(input);
-        double rateValue = rate.getRate();
-        
-        CalculationResult resultValue;
+    public ApplicationResult calculation(int input) {
+        ApplicationResult result;
         try {
-            resultValue = new CalculationResult(input * rateValue, rateValue);
+            CalculationInput inputValue = new CalculationInput(input);
+            RateEntity rateEntity = rateRepository.read(input);
+            CalculationResult resultValue = CalculationService.calculation(inputValue, rateEntity);
 
-            return resultValue;
+            result = new ApplicationResult(resultValue.getValue(), rateEntity.getRate());
+
+            return result;
         } catch (DomainException e) {
-            // 非検査例外でラッピング
+            // 非検査例外でラッピングするパターン
             throw new ApplicationException(e);
         }
     }

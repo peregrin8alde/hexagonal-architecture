@@ -1,25 +1,23 @@
 package sample.adapter.primary.test;
 
-import sample.application.domain.object.value.CalculationResult;
-import sample.application.domain.port.primary.IService;
+import sample.application.service.ApplicationResult;
+import sample.application.service.ApplicationServiceInterface;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class TestAdapter {
 
-    IService app;
+    ApplicationServiceInterface app;
 
-    public TestAdapter(IService app) {
+    public TestAdapter(ApplicationServiceInterface app) {
         this.app = app;
     }
 
-    public List<TestResult> run(List<TestCalculationInput> inputList) {
-        List<TestResult> resultList = new ArrayList<>();
+    public List<ApplicationResult> run(List<TestCalculationInput> inputList) {
+        List<ApplicationResult> resultList = new ArrayList<>();
         inputList.forEach(input -> {
-            CalculationResult resultValue = app.calculation(input.getCalculationInput());
-
-            TestResult result = new TestResult(0, resultValue, "");
+            ApplicationResult result = app.calculation(input.getCalculationInput());
             resultList.add(result);
         });
 

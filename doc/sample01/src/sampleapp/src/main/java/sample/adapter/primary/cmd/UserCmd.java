@@ -1,8 +1,8 @@
 package sample.adapter.primary.cmd;
 
-import sample.application.domain.object.value.CalculationResult;
-import sample.application.domain.port.primary.IService;
-import sample.application.domain.port.secondary.RateRepositoryInterface;
+import sample.application.domain.repository.RateRepositoryInterface;
+import sample.application.service.ApplicationResult;
+import sample.application.service.ApplicationServiceInterface;
 import sample.application.service.UseCase01;
 import sample.adapter.secondary.mock.MockRateRepo;
 
@@ -31,7 +31,7 @@ public class UserCmd {
             CommandLine cmd = parser.parse(options, args);
 
             RateRepositoryInterface repository;
-            IService app;
+            ApplicationServiceInterface app;
             if (cmd.hasOption("r")) {
                 String repositoryType = cmd.getOptionValue("r");
                 switch (repositoryType) {
@@ -63,7 +63,7 @@ public class UserCmd {
 
             int input = Integer.parseInt(cmd.getOptionValue("i"));
 
-            CalculationResult resultValue = app.calculation(input);
+            ApplicationResult resultValue = app.calculation(input);
             System.out.println("result : " + resultValue.getRate());
         } catch (ParseException exp) {
             System.err.println("Parsing failed.  Reason: " + exp.getMessage());

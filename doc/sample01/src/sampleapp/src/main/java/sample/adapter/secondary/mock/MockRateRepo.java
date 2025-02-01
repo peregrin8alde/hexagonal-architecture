@@ -2,7 +2,7 @@ package sample.adapter.secondary.mock;
 
 import sample.application.domain.exception.DomainException;
 import sample.application.domain.object.entity.RateEntity;
-import sample.application.domain.port.secondary.RateRepositoryInterface;
+import sample.application.domain.repository.RateRepositoryInterface;
 
 public class MockRateRepo implements RateRepositoryInterface {
 
