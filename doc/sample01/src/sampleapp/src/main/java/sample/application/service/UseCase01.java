@@ -27,7 +27,12 @@ public class UseCase01 implements ApplicationServiceInterface {
             return result;
         } catch (DomainException e) {
             // 非検査例外でラッピングするパターン
+            // エラーメッセージはドメイン層のものがそのまま出るため、アプリケーション層の例外種別だけで
+            // アプリケーション層としての原因を判明できるようにしておくこと
             throw new ApplicationException(e);
+            // ドメイン例外を隠してアプリケーション例外に置き換えてしまうのもあり
+            // 原因の調査でドメイン層か否かを判断する必要がなく、アプリケーション層としてのエラー対応が望ましい場合向け
+            //throw new ApplicationException("アプリケーション層用のエラーメッセージ");
         }
     }
 }
