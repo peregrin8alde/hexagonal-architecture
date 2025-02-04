@@ -101,7 +101,7 @@ class TestAdapterTest {
             fail();
         } catch (ApplicationException e) {
             // 異常系の場合はこの例外をテストする必要がある
-            assertEquals(e.getMessage(), "");
+            assertEquals(e.getMessage(), "Application Error : 500 is invalid input!!");
         }
     }
 
@@ -119,7 +119,7 @@ class TestAdapterTest {
             testAdapter.run(inputList);
         });
 
-        assertEquals(e.getMessage(), "");
+        assertEquals(e.getMessage(), "Application Error : 500 is invalid input!!");
     }
 
     @Test
