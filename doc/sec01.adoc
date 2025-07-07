@@ -1,6 +1,11 @@
 = 前提知識
 
+:leveloffset: +1
 
+include::sections/three-tier-architecture.adoc[]
+include::sections/layered-architecture.adoc[]
+
+:leveloffset: -1
 
 
 
